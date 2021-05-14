@@ -1,49 +1,43 @@
 import React from 'react';
 import {Table} from 'antd';
+import fakeData from '../../data/fakeData.json';
 
-const dataIndex = [
+const columns = [
     {
-        id:'name1',
-        name: 'Name1',
-        age: 32,
-        address: 'name1',
+        title: 'ID',
+        dataIndex: 'key',
+        key: 'id',
     },
     {
-        id:'name2',
-        name: 'Name2',
-        age: 33,
-        address: 'name2',
+      title: 'Picture',
+      dataIndex: 'picture',
+      key: 'picture',
     },
     {
-        id:'name3',
-        name: 'Name3',
-        age: 34,
-        address: 'name3',
-    }];
+      title: 'Age',
+      dataIndex: 'age',
+      key: 'age',
+    },
+    {
+      title: 'Name',
+      dataIndex: 'name',
+      key: 'name',
+    },
+    {
+        title: 'Last name',
+        dataIndex: 'lastname',
+        key: 'lastname',
+      },
+      {
+        title: 'Gender',
+        dataIndex: 'gender',
+        key: 'gender',
+      }
+];
 
 const MainTable = (props) => {
-    const columns = [
-        {
-            title: 'ID',
-            dataIndex: 'id',
-            key: 'id',
-        },
-        {
-          title: 'Name',
-          dataIndex: 'name',
-          key: 'name',
-        },
-        {
-          title: 'Age',
-          dataIndex: 'age',
-          key: 'age',
-        },
-        {
-          title: 'Address',
-          dataIndex: 'address',
-          key: 'address',
-        },];
+    
 
-    return (<Table columns={columns} dataSource={dataIndex} />);
+    return (<Table columns={columns} dataSource={fakeData} />);
 };
 export default MainTable;

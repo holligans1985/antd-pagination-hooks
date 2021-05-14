@@ -1,5 +1,5 @@
 import axios from 'axios';
-
+import fakeData from '../data/fakeData.json'
 const baseURL = 'https://api.themoviedb.org/3/';
 const apiKey = 'c85eab87f37d43b30658071ba8c1c21f';
 
@@ -20,7 +20,12 @@ const services = {
       .then((response) => response.data),
   getPaginationTotal:async () => {
     await delayFunc(3000);
-    return 345;
+    return fakeData.length;
+  },
+  getPaginatedData:async (query) => {
+    await delayFunc(3000);
+    return fakeData;
+    // return piece of data
   }
 };
 
