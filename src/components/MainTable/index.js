@@ -1,6 +1,6 @@
 import React from 'react';
 import {Table} from 'antd';
-import fakeData from '../../data/fakeData.json';
+
 
 const columns = [
     {
@@ -35,9 +35,8 @@ const columns = [
       }
 ];
 
-const MainTable = (props) => {
-    
-
-    return (<Table columns={columns} dataSource={fakeData} />);
+const MainTable = ({tableData}) => {
+  const {data,loading,error} =  tableData;
+    return (<Table columns={columns} dataSource={data} loading={loading}/>);
 };
 export default MainTable;
